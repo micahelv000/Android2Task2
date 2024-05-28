@@ -1,26 +1,47 @@
-.new-expense__controls {
+.form-control {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
     margin-bottom: 1rem;
-    text-align: left;
-}
-
-.new-expense__control label {
+    flex: 1;
+  }
+  
+  .form-control label {
     font-weight: bold;
     margin-bottom: 0.5rem;
-    display: block;
-}
-
-.new-expense__control input {
-    font: inherit;
+  }
+  
+  .form-control input {
     padding: 0.5rem;
-    border-radius: 6px;
+    font: inherit;
     border: 1px solid #ccc;
-    width: 20rem;
-    max-width: 100%;
-}
-
-.new-expense__actions {
-    text-align: right;
-}
+    border-radius: 4px;
+  }
+  
+  .form-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-actions button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    border-radius: 4px;
+    margin-left: 1rem;
+  }
+  
+  .form-actions button:hover,
+  .form-actions button:active {
+    background-color: #510674;
+    border-color: #510674;
+  }
+  
+  .form-inline {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+  

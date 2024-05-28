@@ -1,6 +1,5 @@
-
-
 import Expenses from "./components/Expenses";
+import ExpensesFrom from "./components/ExpenseForm";
 
 function App() {
 
@@ -14,8 +13,11 @@ function App() {
   return (
     <div>
 
-      <Expenses items={expense} />
-
+      <ExpensesFrom />
+      <div>
+        <Expenses items={expense} />
+        </div>
+        
     </div>
 
   );
