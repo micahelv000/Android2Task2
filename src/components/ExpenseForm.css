@@ -10,6 +10,10 @@
     margin-bottom: 0.5 px;
     
   }
+  #anim{
+    width: 150px;
+    height: 100px;
+  }
   .form-control  {
     padding: 0.5rem;
     font: inherit;

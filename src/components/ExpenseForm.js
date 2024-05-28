@@ -1,12 +1,12 @@
-import "./ExpenseForm.css";
 import React, { useState } from "react";
+
+import "./ExpenseForm.css";
 import Clock from './Clock';
 
-
-const ExpenseForm = () => {
-  const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState('');
-  const [date, setDate] = useState('');
+const ExpenseForm = (props) => {
+    const [title, setTitle] = useState('');
+    const [amount, setAmount] = useState('');
+    const [date, setDate] = useState('');
 
     const titleChangeHandler = (event) => {
         setTitle(event.target.value);
@@ -22,9 +22,15 @@ const ExpenseForm = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        console.log(title, amount, date);
 
-        // You can also add logic to send data to a server here
+        const expenseData = 
+        {
+            title,
+            amount,
+            date: new Date(date),
+        };
+
+        props.onAddExpense(expenseData);
 
         // Clear form inputs after submission
         setTitle('');
@@ -42,40 +48,42 @@ const ExpenseForm = () => {
                         value={title}
                         onChange={titleChangeHandler}
                     />
-                </div>
-                <div className="form-control">
-                    <label>Amount</label>
-                    <input
-                        type="number"
-                        min="0.01"
-                        step="0.01"
-                        value={amount}
-                        onChange={amountChangeHandler}
-                    />
-                </div>
-                <div className="form-control">
-                    <label>Date</label>
-                    <input
-                        type="date"
-                        min="2019-01-01"
-                        value={date}
-                        onChange={dateChangeHandler}
-                    />
-                </div>
-                <div className="form-control">
-                    <label>Clock</label>
-                    <div className="inner-form-control">
-                    <Clock/>
-                    </div>
-                </div>
-
-                <div className="form-actions">
-                    <button type="submit">Add Expense</button>
+            </div>
+            <div className="form-control">
+                <label>Amount</label>
+                <input
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    value={amount}
+                    onChange={amountChangeHandler}
+                />
+            </div>
+            <div className="form-control">
+                <label>Date</label>
+                <input
+                    type="date"
+                    min="2019-01-01"
+                    value={date}
+                    onChange={dateChangeHandler}
+                />
+            </div>
+            <div className="form-control">
+                <label>Clock</label>
+                <div className="inner-form-control">
+                    <Clock />
                 </div>
             </div>
+
+            <img id="anim" src="https://www.caccioppoli.com/Animated%20gifs/Clock/RUNNING.gif" alt="Running clock" />
+
+            <div className="form-actions">
+
+                <button type="submit">Add Expense</button>
+            </div>
+        </div>
         </form>
     );
-    
 };
 
 export default ExpenseForm;
