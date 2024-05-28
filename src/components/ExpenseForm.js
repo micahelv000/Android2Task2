@@ -1,5 +1,7 @@
 import "./ExpenseForm.css";
 import React, { useState } from "react";
+import Clock from './Clock';
+
 
 const ExpenseForm = () => {
   const [title, setTitle] = useState('');
@@ -60,6 +62,13 @@ const ExpenseForm = () => {
                         onChange={dateChangeHandler}
                     />
                 </div>
+                <div className="form-control">
+                    <label>Clock</label>
+                    <div className="inner-form-control">
+                    <Clock/>
+                    </div>
+                </div>
+
                 <div className="form-actions">
                     <button type="submit">Add Expense</button>
                 </div>

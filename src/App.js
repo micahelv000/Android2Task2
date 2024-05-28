@@ -14,10 +14,11 @@ function App() {
     <div>
 
       <ExpensesFrom />
+      
       <div>
         <Expenses items={expense} />
         </div>
-        
+
     </div>
 
   );
