@@ -7,7 +7,7 @@ function Expenses({ items }) {
         <div className='expenses'>
             {items.map((expense) => (
                 <ExpenseItem
-                    index={expense.id}
+                    key={expense.id}
                     title={expense.title}
                     amount={expense.amount}
                     date={expense.date}
