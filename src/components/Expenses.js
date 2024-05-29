@@ -1,11 +1,13 @@
+import React from 'react';
 import ExpenseItem from './ExpenseItem';
+import './Expenses.css';
 
-function Expenses(props) {
+function Expenses({ items }) {
     return (
         <div className='expenses'>
-            {props.items.map((expense, index) => (
+            {items.map((expense) => (
                 <ExpenseItem
-                    key={index}
+                    index={expense.id}
                     title={expense.title}
                     amount={expense.amount}
                     date={expense.date}
