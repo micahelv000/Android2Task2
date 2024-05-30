@@ -7,8 +7,8 @@ import Card from './Card';
 function ExpenseItem(props) {
 
     const [title, setTitle] = useState(props.title)
-    const [amount, setAmount] = useState(props.amount)
-    const [date, setDate] = useState(props.date)
+    const [amount] = useState(props.amount)
+    const [date] = useState(props.date)
 
     const clickHandlerServer = () => {
 
